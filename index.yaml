@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   istio-cni:
   - apiVersion: v1
-    created: "2020-09-04T14:27:29.564136779Z"
+    created: "2020-09-04T14:29:49.66748369Z"
     description: Helm chart for istio-cni components
-    digest: 165e17b1047ceeec4811836746f7c479c4676658bd1d5648b87960212a23f9cf
+    digest: 54e254610d923cd04d92df598983d3dbd1d7f3bfca986a6dabe871e694c846ff
     icon: https://istio.io/latest/favicons/android-192x192.png
     keywords:
     - istio-cni
@@ -17,9 +17,9 @@ entries:
     version: 1.1.0
   istio-operator:
   - apiVersion: v1
-    created: "2020-09-04T14:27:29.564657894Z"
+    created: "2020-09-04T14:29:49.66791699Z"
     description: Helm chart for deploying Istio operator
-    digest: a351ef8cc3caf3104454eb87a87ce9ea623c1c4569796db11ee7d8a90a39bba4
+    digest: e0aa71e3d325112308b1df2fa6d38d73a6042df02f86a1962e1392142a3b541d
     icon: https://istio.io/latest/favicons/android-192x192.png
     keywords:
     - istio
@@ -30,4 +30,4 @@ entries:
     urls:
     - https://clusterfrak-dynamics.github.io/istio/istio-operator-1.7.0.tgz
     version: 1.7.0
-generated: "2020-09-04T14:27:29.563294453Z"
+generated: "2020-09-04T14:29:49.666449489Z"

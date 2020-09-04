@@ -1,0 +1,37 @@
+name: 'istio'
+
+on:
+  push:
+    branches:
+    - develop
+    paths:
+    - 'manifests/charts/**'
+  pull_request:
+
+jobs:
+  charts:
+    name: 'istio'
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: 'asdf:install'
+      uses: asdf-vm/actions/install@v1.0.0
+
+    - name: 'istio-charts:lint'
+      run: helm lint manifests/charts/istio-{operator,cni}
+
+    - name: 'istio-charts:package'
+      run: helm package -d dist manifests/charts/istio-{operator,cni}
+
+    - name: 'istio-charts:index'
+      run: helm repo index --url https://clusterfrak-dynamics.github.io/istio/ .
+      working-directory: dist
+
+    - name: 'istio-charts:gh-pages'
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: dist
